@@ -9,7 +9,7 @@ def copy_file(command: str) -> None:
     try:
         with (open(file_in_name, "r") as file_in,
               open(file_out_name, "w") as file_out):
-            line = file_in.readline()
-            file_out.write(line)
+            lines = file_in.readlines()
+            file_out.writelines(lines)
     except FileNotFoundError as e:
         print("Some of files is missing!", e)
